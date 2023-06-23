@@ -43,3 +43,12 @@ def question_create(request):
         form = QuestionForm()
     context = {'form': form}
     return render(request, 'spam/question_form.html', context)
+
+from django.shortcuts import render, get_object_or_404
+from .models import Question
+
+def delete_request(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    # 필요한 로직을 구현하고 삭제요청 페이지를 렌더링하는 코드 작성
+
+    return render(request, 'spam/delete_request.html', {'question': question})

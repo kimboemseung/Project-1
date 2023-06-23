@@ -21,11 +21,12 @@
     </ul>
 </div>
 
-
 <form action="{% url 'spam:answer_create' question.id %}" method="post">
-{% csrf_token %}
-<textarea name="content" id="content" rows="15"></textarea>
-<input type="submit" value="댓글 등록">
+    {% csrf_token %}
+    <textarea name="content" id="content" rows="15"></textarea>
+    <input type="submit" value="댓글 등록">
 </form>
+
+<a href="{% url 'spam:delete_request' question.id %}" class="btn btn-danger">번호 삭제</a>
 
 {% endblock %}
