@@ -1,5 +1,4 @@
 from django import forms
-
 from spam.models import Question
 
 

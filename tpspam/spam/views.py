@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Question
 from django.utils import timezone
 
-from .forms import QuestionForm, AnswerForm
+from .forms import QuestionForm
+from .models import Question
 
 def answer_create(request, question_id):
     """
