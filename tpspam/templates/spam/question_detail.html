@@ -2,3 +2,18 @@
 <div>
     {{ question.content }}
 </div>
+
+<div>
+    <ul>
+    {% for answer in question.answer_set.all %}
+        <li>{{ answer.content }}</li>
+    {% endfor %}
+    </ul>
+</div>
+
+
+<form action="{% url 'spam:answer_create' question.id %}" method="post">
+{% csrf_token %}
+<textarea name="content" id="content" rows="15"></textarea>
+<input type="submit" value="댓글 등록">
+</form>
